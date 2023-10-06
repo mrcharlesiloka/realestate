@@ -1,0 +1,154 @@
+CREATE TABLE `eraga_admin` (
+  `admin_id` int NOT NULL,
+  `userid` varchar(45) DEFAULT NULL,
+  `accesscode` varchar(45) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `lastlogin` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `eraga_admin`
+--
+
+INSERT INTO `eraga_admin` (`admin_id`, `userid`, `accesscode`, `name`, `lastlogin`) VALUES
+(1, 'maropuzo', 'OnlinePost1.', 'Administrator', '2023-05-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eraga_category`
+--
+
+CREATE TABLE `eraga_category` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `eraga_category`
+--
+
+INSERT INTO `eraga_category` (`id`, `name`) VALUES
+(35, 'For-Sale'),
+(36, 'For-Rent'),
+(37, 'Lease');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eraga_gallery`
+--
+
+CREATE TABLE `eraga_gallery` (
+  `id` int NOT NULL,
+  `pic` longtext,
+  `title` longtext,
+  `gal_type` varchar(100) DEFAULT NULL,
+  `category` varchar(100) DEFAULT NULL,
+  `price` varchar(100) DEFAULT NULL,
+  `avail` varchar(100) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `caption` longtext,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eraga_gal_type`
+--
+
+CREATE TABLE `eraga_gal_type` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `eraga_gal_type`
+--
+
+INSERT INTO `eraga_gal_type` (`id`, `name`) VALUES
+(32, 'Commercial'),
+(33, 'Residential'),
+(40, 'Lands-Plots');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eraga_g_images`
+--
+
+CREATE TABLE `eraga_g_images` (
+  `img_id` int NOT NULL,
+  `id` int NOT NULL,
+  `pic` longtext,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `eraga_admin`
+--
+ALTER TABLE `eraga_admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `eraga_category`
+--
+ALTER TABLE `eraga_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `eraga_gallery`
+--
+ALTER TABLE `eraga_gallery`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `eraga_gal_type`
+--
+ALTER TABLE `eraga_gal_type`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `eraga_g_images`
+--
+ALTER TABLE `eraga_g_images`
+  ADD PRIMARY KEY (`img_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `eraga_admin`
+--
+ALTER TABLE `eraga_admin`
+  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `eraga_category`
+--
+ALTER TABLE `eraga_category`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `eraga_gallery`
+--
+ALTER TABLE `eraga_gallery`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `eraga_gal_type`
+--
+ALTER TABLE `eraga_gal_type`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `eraga_g_images`
+--
+ALTER TABLE `eraga_g_images`
+  MODIFY `img_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
